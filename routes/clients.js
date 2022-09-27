@@ -8,7 +8,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, clientsController.getClient);
 
-router.get("/clientList", ensureAuth, clientsController.getClientList);
+router.get("/clients", ensureAuth, clientsController.getClients);
 
 router.post("/addClient", ensureAuth, clientsController.addClient)
 

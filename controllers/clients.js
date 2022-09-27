@@ -18,10 +18,10 @@ module.exports = {
     }
   },
   // get all clients method
-  getClientList: async (req, res) => {
+  getClients: async (req, res) => {
     try {
       const clients = await Client.find().sort({ createdAt: "desc" }).lean();
-      res.render("clientList.ejs", {clients: clients, user: req.user}); //check
+      res.render("clients.ejs", {clients: clients, user: req.user}); //check
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +35,7 @@ module.exports = {
         data: req.body.data,
       });
       console.log("Client has been added!");
-      res.redirect("/clientList"); //change
+      res.redirect("/clients"); //change
     } catch (err) {
       console.log(err); 
     }
@@ -47,7 +47,7 @@ module.exports = {
       // Delete post from db
       await Client.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/clientList");
+      res.redirect("/clients");
     } catch (err) {
       res.redirect("/profile");
     }

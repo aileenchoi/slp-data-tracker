@@ -6,6 +6,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
 
-router.get("/:id", ensureAuth, TrackerController.getTracker);
+router.get("/:id", ensureAuth, trackerController.getTracker);
 
 module.exports = router;
