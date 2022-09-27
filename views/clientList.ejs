@@ -1,0 +1,38 @@
+<%- include('partials/header') -%>
+  <div class="container">
+  <div class="row justify-content-center mt-5">
+    
+    <!-- form to add client -->
+    <div class="mt-5">
+      <h1>Add a client</h1>
+        <form action="/clients/addClient>" method="POST">
+          <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="birthdate" class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate">
+          </div>
+          <div class="mb-3">
+            <label for="goal" class="form-label">Goal</label>
+            <input type="text" class="form-control" id="goal" name="goal">
+          </div>  
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <!-- List of all existing clients -->
+        <h1>Clients</h1>
+        <div>
+          <ul class = "row list-unstyled">
+          <% for(var i=0; i<clients.length; i++) {%>
+            <li>
+              <%= clients[i].name %>
+            </li>
+          <% } %>
+          </ul>
+        </div>
+
+      <div>
+
+<%- include('partials/footer') -%>

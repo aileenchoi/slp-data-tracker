@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+  <div class="container">
+  <div class="row justify-content-center mt-5">
+    
+    <!-- Select client via drop down -->
+    <!-- track data - two buttons -->
+
+    <h1>Track data</h1>
+
+    <section>
+        <h2>Select Client</h2>
+            <select name="client">
+                <option value="">Select Client</option>
+                <% for(let count=0; count<client_data.length; count++ {%>
+                    <option value="<% client_data[count].client %>"><% = client_data[count].client %></option>
+                <% } %>
+            </select>
+    </section>
+    <!-- form to add client -->
+
+
+<%- include('partials/footer') -%>

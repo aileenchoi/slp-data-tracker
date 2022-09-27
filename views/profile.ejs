@@ -1,0 +1,20 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+
+<h1> What would you like to do?</h1>
+<div class="row justify-content-center mt-5">
+  <a class="btn btn-primary" href="/clientList">View or Add Clients</a>
+</div> 
+
+<div class="row justify-content-center mt-5">
+  <a class="btn btn-primary" href="/tracker">Track Data</a>
+</div> 
+
+<%- include('partials/footer') -%>
